@@ -1,25 +1,30 @@
 \subsection{Constraints}
 
-For this BSP, we set the different constraints for the Neural Networks, for the
-Luxembourgish vocal dataset and the classification model's implementation.\\
+For this BSP, we set the different constraints for the ANNs, for the Speech
+recognition for the Luxembourgish vocal dataset and the classification model's
+implementation.\\
 
-% speaker dependent
+\textbf{Data set.} First of all, we focus on training our model on a dataset
+containing English spoken numbers.~\cite{DBLP} After having trained the model
+successfully on this dataset, we train it on the smaller Luxembourgish dataset
+and analyse its prediction accuracy. Since we aren't able to collect as much
+voice recordings as the English data set, we should not expect high accuracy.\\
+
+%reference paper
+
+\textbf{Speech recognition.} Since no dataset of the Luxembourgish Language
+exists, we choose to work with isolated word recognition instead of Speech
+recognition.\\
+
+\textbf{Speaker dependent.} To simplify the collection of the Luxembourgish
+dataset, we collect the audio recordings from one person which makes the
+isolated word recognition speaker dependent.\\
 
 \textbf{Classification problem.} For the presentation of the three required
 Neural Network architecture, we set the constraint to present only the Neural
 Networks in a classification setting rather than for a regression problem. \\
 
-\textbf{Data set.} First of all, we focus on training our model on a dataset
-containing English spoken numbers. After having trained the model successfully
-on this dataset, we train it on the smaller Luxembourgish dataset and analyse
-its prediction accuracy. Since we aren't able to collect as much voice
-recordings as the English data set, we should not expect high accuracy.\\
-
-%reference paper
-
-\textbf{Framework implementation.} We do not implement the Neural Networks
+\textbf{ANNs implementation.} We do not implement the Artificial Neural Networks
 architecture since existing deep learning libraries such as Keras are already
 matured. Thereby, we focus on explaining how the APIs work and how to use them
-in our model.\\
-
-\textbf{Other constraints.} \textcolor{gray}{Other possible constraints.}
+in our model.
