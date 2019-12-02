@@ -1,9 +1,11 @@
+%corrected
+
 \section{Project description}
 \subsection{Domains}
 
 \begin{itemize}
         \item Speech Recognition
-        \item Artifictial Neural Networks
+        \item Artificial Neural Networks
         \item Deep Learning 
         \item Data preprocessing
         \item Training set and testing set
@@ -14,14 +16,20 @@
 \subsubsection{Scientific}
 
 The scientific aspects covered by this Bachelor Semester Project are the
-concepts of speech recognition and Deep Learning. Different Artifictial Neural
+concepts of speech recognition and Deep Learning. Different Artificial Neural
 Networks architectures are presented scientifically. \\
 
 \textbf{Speech Recognition.} The objective of speech recognition is to map an
 audio signal which contains a set of spoken natural language expressions to the
-matching sequence of words produced by the speaker.\\
-
-%add development of speechrecognition
+matching sequence of words produced by the speaker. In the past, Automatic
+Speech Recognition (ASR) was made up of different modules such as complex
+feature extraction, acoustic models, sequential models, language and
+pronunciation models.~\cite{DBLP:journals/corr/AmodeiABCCCCCCD15} Sequential
+models, such as Hidden Markov Models (HMM), in combination with a pre-trained
+language model were used to map sequences of phones to output
+words.~\cite{Williamsong} A different approach is to build ASR models
+end-to-end. With deep learning, it replaces most of the modules with a single
+module. This alternative method will be the main task of this report.\\
 
 \textbf{Artifictial Neural Networks (ANN).} ANNs are computing systems inspired
 by the biological brain. These systems are based on a set of connected units
@@ -46,7 +54,7 @@ in this paper with the presentation of Mel-frequency cepstral coefficients
 
 %add section
 
-\textbf{Training set and testing set.} In order for a computing system to learn
+\textbf{Training set and testing set.} For a computing system to learn
 from and make predictions on data, a mathematical model is built from an input
 data. This input data used to create the model consists of two datasets. The
 training and testing set. The training set contains pairs of an input vector and
