@@ -1,4 +1,4 @@
-%corrected
+% correcte VD
 
 \section{Project description}
 \subsection{Domains}
@@ -17,21 +17,22 @@
 
 The scientific aspects covered by this Bachelor Semester Project are the
 concepts of speech recognition and Deep Learning. Different Artificial Neural
-Networks architectures are presented scientifically. \\
+Networks architectures are investigated for the end-to-end isolated word
+recognition task.\\
 
 \textbf{Speech Recognition.} The objective of speech recognition is to map an
 audio signal which contains a set of spoken natural language expressions to the
 matching sequence of words produced by the speaker. In the past, Automatic
 Speech Recognition (ASR) was made up of different modules such as complex
-feature extraction, acoustic models, sequential models, language and
-pronunciation models.~\cite{DBLP:journals/corr/AmodeiABCCCCCCD15} Sequential
-models, such as Hidden Markov Models (HMM), in combination with a pre-trained
-language model were used to map sequences of phones to output
-words.~\cite{Williamsong} A different approach is to build ASR models
-end-to-end. With deep learning, it replaces most of the modules with a single
-module. This alternative method will be the main task of this report.\\
+feature extraction, acoustic models, language and pronunciation
+models.~\cite{DBLP:journals/corr/AmodeiABCCCCCCD15} Sequential models, such as
+Hidden Markov Models (HMM), in combination with a pre-trained language model,
+were used to map sequences of phones to output words.~\cite{Williamsong} A
+different approach is to build ASR models end-to-end. With deep learning, it
+replaces most of the modules with a single module. This alternative method will
+be the main task of this report.\\
 
-\textbf{Artifictial Neural Networks (ANN).} ANNs are computing systems inspired
+\textbf{Artificial Neural Networks (ANN).} ANNs are computing systems inspired
 by the biological brain. These systems are based on a set of connected units
 called artificial nodes. Each connection can transmit \textit{signals} between
 units. A unit can process the signal and transmit it to another unit.\\
@@ -47,24 +48,25 @@ classification model. \\
 \textbf{Data preprocessing.} Data preprocessing is an important phase in machine
 learning. It ensures the quality of the gathered data by eliminating irrelevant
 and redundant information. Data preprocessing contains tasks such as cleaning,
-instance selection, normalization, feature extraction and selection. The result
-of data preprocessing is the training set. We will focus on feature extraction
-in this paper with the presentation of Mel-frequency cepstral coefficients
-(MFCCs) in section~\ref{mfccs}.\\
+instance selection, normalization, feature extraction and selection. We will
+focus on feature extraction in this paper with the presentation of Mel-frequency
+cepstral coefficients (MFCCs) in Section~\ref{mfccs} which are used as features
+extracted from the speech signal.\\
 
 %add section
 
-\textbf{Training set and testing set.} For a computing system to learn
-from and make predictions on data, a mathematical model is built from an input
-data. This input data used to create the model consists of two datasets. The
-training and testing set. The training set contains pairs of an input vector and
-an output vector often called the label. With the training set, the model learns
-to map the input vector to the label. Whereas, the testing set evaluates how
-well the model generalizes the prediction over the dataset.\\
+\textbf{Training set and testing set.} For a computing system to learn from and
+make predictions on data, a mathematical model is built from input data. This
+input data used to create the model consists of two datasets: The training and
+testing set. The training set contains pairs of an input vector, which represent
+features and an output vector often called the labels. With the training set,
+the model learns to map the input vector to the labels. On the other hand, the
+testing set evaluates how well the model generalizes the prediction over the
+dataset previously not seen by the model.\\
 
 \textbf{Python.} This is a programming language which is interpreted, high-level
 and general-purpose.~\cite{Python}\\
 
 \textbf{Keras Library.} \textit{Keras} is a high-level Neural Networks API
-written in Python. It is designed for fast experimentation with Deep
-Learning.~\cite{chollet2015keras}
+written in Python. It is designed for easy-to-use and efficient experimentation
+with Deep Learning.~\cite{chollet2015keras}

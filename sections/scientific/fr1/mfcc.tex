@@ -1,10 +1,12 @@
-% corrected
+% corrected LN 87
+
+\subsubsection{FR01: Feature extraction with MFCCs}\label{mfccs}~\\
 
 % introduction
 
-Before we can train our ASR model, we have to process our audio data. The first
-task is to extract features from the data which describes natural languages
-expressions and excludes background noises and emotions.\\
+Before we can train our end-to-end ASR model, we have to process our audio data.
+The first task is to extract features from the data which describes natural
+language expressions and excludes background noises and emotions.\\
 
 % def of MFCCs
 
@@ -15,28 +17,27 @@ To extract the MFCCS from the dataset, the following extraction steps have to be
 executed on a speech signal sampled at $16kHz$:\\
 
 \begin{enumerate}[label=\arabic*.]
-  \item Frame the signal into short frames.\\
-  
-  Frame the signal into $25ms$ frames. The frame length of a $16kHz$ signal:
-  \begin{center} 
+  \item Frame the signal into $25ms$ frames. The frame length of a $16kHz$
+    signal:
+  \begin{equation} 
     0.025*16000 = 400 samples.
-  \end{center}
+  \end{equation}
   With a frame step of $160\ samples$ or $10ms$, the frames overlap themselves.
-  Such that the first $400\ samples$ frame start at sample 0 and the second
-  frame starts at sample 160. This pattern repeats until the end of speech
-  signal. If the audio file is not divisible by an even number, it is padded by
-  zeros until it is.\\
+  Such that the first frame containing $400\ samples$ starts at sample 0 and the
+  second frame starts at sample 160. This pattern repeats until the end of
+  speech signal. If the audio file is not divisible by an even number, it is
+  padded by zeros until it is.\\
   \item For each frame calculate the periodogram estimate of the power spectrum.
     To obtain the Discrete Fourier Transform (DTF) from the frame $i$, we
     perform:
-    \begin{center}
-      \[S_{i}(k) = \sum_{N}^{n=1}s_i(n)h(n)e^{-j2\pi kn/N}\]
-    \end{center}
+    \begin{equation}
+      S_{i}(k) = \sum_{N}^{n=1}s_i(n)h(n)e^{-j2\pi kn/N}
+    \end{equation}
     For each speech frame $s_{i}(n)$, the periodogram-based power spectral
     estimate is calculated with:
-    \begin{center}
-      \[P_{i}(k)=\frac{1}{N}{\mid{S_{i}(k)}\mid}^{2}\]
-    \end{center}
+    \begin{equation}
+      P_{i}(k)=\frac{1}{N}{\mid{S_{i}(k)}\mid}^{2}
+    \end{equation}
   This is called the Periodogram estimate of the power spectrum which identifies
   for every frame which frequencies are present. The first 257 coefficients are
   kept from the 512 points fast Fourier transform which is an algorithm to
@@ -51,4 +52,5 @@ executed on a speech signal sampled at $16kHz$:\\
     of the 26 coefficients for ASR.\\
 \end{enumerate}
 
-\textcolor{gray}{figures to be added}
+In section \ref{librosa} we will use the Python library \textit{Librosa} to show how we extracted the
+MFCCs feature from the dataset.
