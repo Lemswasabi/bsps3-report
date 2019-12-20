@@ -1,4 +1,43 @@
-\subsection{Assessment ($\pm$ 15\% of section's words)}
-\subsubsection{NFR01: Accuracy comparison}
-\textcolor{gray}{Provide any objective elements to assess that your deliverables
-do or do not satisfy the requirements described above. }
+% 
+
+\subsection{Assessment}
+\subsubsection{NFR01: Performance evaluation}~\\
+
+In this section, the performance of the four ANNs mentioned in Section~\ref{ann}
+are evaluated. We use the English and Luxembourgish dataset for the final
+performance analysis. Before starting to train and evaluate the four models, the
+loss optimizer and number of epochs have to chosen. The english dataset is used
+to designate an optimal optimizer and number of epochs.\\
+
+The first step is to choose an optimal optimizer. The choice is between using
+the stochastic gradient descent (SGD) or the Adam optimizer. The second is a
+combination of two extensions of SGD, Adaptive Gradient Algorithm (AdaGrad) and
+Root Mean Square Propagation (RMSProp)~\cite{Adam}.\\
+
+After testing both optimizers, the results are the following:
+
+% table adam vs sgd
+
+The results using Adam as optimizer yield better accuracies compared to SGD. For
+the following performance analysis, the Adam optimizer is considered.\\
+
+The next step is to choose the number of epochs which will be used for the
+performance analysis. The following results were made with the number of epochs
+being between $1-60$:
+
+% tabel loss and accuracy
+
+The graphs show the loss converges around $n$ epochs. Therefore, we choose
+$epochs = n$.\\
+
+Let $epochs = n$ we evaluate each model's performance.
+
+% performance table
+
+
+% explanation of the performance table eng vs lux.
+% lux ffw vs rnn vs lstm generalization
+
+% explanation ffw vs lstm and gru
+% explanation rnn vs lstm
+% explanation lstm vs gru
