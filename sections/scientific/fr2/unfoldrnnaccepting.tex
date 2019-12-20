@@ -4,14 +4,14 @@
 
     \node[inputNode, minimum size=3em] (h) at (-5,0) {$\tiny h$};
     \node[inputNode, minimum size=3em] (x) at (-5,-1.5) {$\tiny x$};
-    \node[inputNode, dashed, minimum size=3em] (s0) at (-3,0) {$\tiny h^{(\dots)}$};
-    \node[inputNode, minimum size=3em] (s1) at (-1.5,0) {$\tiny h^{(t-1)}$};
-    \node[inputNode, minimum size=3em] (s2) at (0,0) {$\tiny h^{(t)}$};
-    \node[inputNode, minimum size=3em] (s3) at (1.5,0) {$\tiny h^{(t+1)}$};
-    \node[inputNode, dashed, minimum size=3em] (s4) at (3,0) {$\tiny h^{(\dots)}$};
-    \node[inputNode, minimum size=3em] (x1) at (-1.5,-1.5) {$\tiny x^{(t-1)}$};
-    \node[inputNode, minimum size=3em] (x2) at (0,-1.5) {$\tiny x^{(t)}$};
-    \node[inputNode, minimum size=3em] (x3) at (1.5,-1.5) {$\tiny x^{(t+1)}$};
+    \node[inputNode, dashed, minimum size=3em] (s0) at (-3,0) {$\tiny h_{\dots}$};
+    \node[inputNode, minimum size=3em] (s1) at (-1.5,0) {$\tiny h_{t-1}$};
+    \node[inputNode, minimum size=3em] (s2) at (0,0) {$\tiny h_{t}$};
+    \node[inputNode, minimum size=3em] (s3) at (1.5,0) {$\tiny h_{t+1}$};
+    \node[inputNode, dashed, minimum size=3em] (s4) at (3,0) {$\tiny h_{\dots}$};
+    \node[inputNode, minimum size=3em] (x1) at (-1.5,-1.5) {$\tiny x_{t-1}$};
+    \node[inputNode, minimum size=3em] (x2) at (0,-1.5) {$\tiny x_{t}$};
+    \node[inputNode, minimum size=3em] (x3) at (1.5,-1.5) {$\tiny x_{t+1}$};
     
     \draw[stateTransition] (x) -- (h);
     \draw[thick, ->, loop right] (h) to node[below] {$f$} (h);

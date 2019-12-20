@@ -70,7 +70,7 @@
   \draw[stateTransition] (x3) to[out=0,in=210] node [midway, sloped, above] {$W_3$} (x);
   \draw[stateTransition] (xn) to[out=0,in=240] node [midway, sloped, above] {$W_n$} (x);
   \draw[stateTransition] (x) -- (4,0-4) node [midway,above]
-    {$g\left(\sum\limits_{i=1}^{n}{W_ix_i} + B\right)$};
+  {$g\left(\sum\limits_{i=1}^{n}{W_ix_i} + b_{input}\right)$};
   \draw[dashed] (0,-0.43-4) -- (0,0.43-4);
   \node (dots) at (-2, -1.15-4) {$\vdots$};
 
@@ -78,6 +78,6 @@
   \path[dashed, double, ultra thick, gray] (x.east) edge[bend right=0] (h5.east);
 
   \end{tikzpicture}
-  \label{mlp}
   \caption{A figure of a single perceptron with its position in a large-scale MLP.}
+  \label{ff}
 \end{figure}

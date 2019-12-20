@@ -1,4 +1,4 @@
-% corrected LN 94
+% corrected VD
 
 \subsubsection{Feedforward Neural Network}~\\
 
@@ -11,16 +11,14 @@ function can be for example a classifier, $y = f^{*}(\bm{x})$ which maps an
 input $\bm{x}$ to a class $y$.\\
 
 These structures are called \textbf{feedforward} since there is a progress of
-information. It is first evaluated as input $\bm{x}$ through the function
-$\bm{f}$, then goes through the computations which define $\bm{f}$ and ends up
-at the output $\bm{y}$.\\
+information. In one direction: From input to output.\\
 
 MLPs are called \textbf{networks} because they are made up of composed
 functions. Let $f_{1}$, $f_{2}$ and $f_{3}$ be three function forming a chain
 $f(\bm{x}) = f_{3}(f_{2}(f_{1}(\bm{x})))$. The chain structures are commonly
 used in ANNs. In the example, $f_{1}$ is called the first layer of the network,
-$f_{2}$ is called the second layer, etc. The lenght of the chain represents the
-depth of the network. The final layer is also called the output layer.\\
+$f_{2}$ is the second layer, etc. The lenght of the chain represents the depth
+of the network. The final layer is also called the output layer.\\
 
 During the training of the neural network, we try to find $f(\bm{x})$ to
 approximate $f^{*}(\bm{x})$. The training data contains examples of
@@ -35,48 +33,51 @@ $f^{*}(\bm{x})$.\\
 
 The \textbf{width} of the feedforward model is defined by the dimensionality of
 each hidden layer which is usually a vector containing values. These vector
-layers can be thought of containing many \textbf{units} which process in
-parallel. Each unit refers to a vector-to-scalar function, by taking input from
-other units and calculating its proper activation value.\\
+layers contain many \textbf{units} which process data in parallel. Each unit
+refers to a vector-to-scalar function, by taking input from other units and
+calculating its proper activation value.\\
 
-We will present a simple MLPs with one hidden layer which contains hidden units.
+We will present a simple MLP with one hidden layer which contains hidden units.
 The hidden layer represents a vector of hidden units $\bm{h}$ which are
 calculated by a function $f_{1}(\bm{x;\theta})$. $\bm{\theta}$ consists of
-$\bm{W}$ and $\bm{B}$ which are the $weights$ and $biases$ repectively such
+$\bm{W_{input}}$ and $\bm{b_{input}}$ which are the $weights$ and $biases$ repectively such
 that:
 
 \begin{equation}
   \begin{split}
-    h & = f_{1}(\bm{x;W,B}) \\
-    \Leftrightarrow h & = \bm{W}^{T}\bm{x}+\bm{B}
+    h & = f_{1}(\bm{x;W_{input},b_{input}}) \\
+    \Leftrightarrow h & = \bm{W_{input}}^{T}\bm{x}+\bm{b_{input}}
   \end{split}
 \end{equation}
 
 $\bm{h}$ is then used as input for the second layer which is the output layer;
-$f_{2}(\bm{h;w,b})$. 
+$f_{2}(\bm{h;W_{output},b_{output}})$. 
 
 \begin{equation}
   \begin{split}
-    y & = f_{2}(\bm{h;w,b}) \\
-    \Leftrightarrow y & = \bm{w}^{T}\bm{h}+\bm{b}
+    y & = f_{2}(\bm{h;W_{output},b_{output}}) \\
+    \Leftrightarrow y & = \bm{W_{output}}^{T}\bm{h}+\bm{b_{output}}
   \end{split}
 \end{equation}
 
 The network can be illustrated as a chain of two functions:
 
 \begin{equation} 
-  f(\bm{x;W,B,w,b}) = f_{2}(f_{1}(\bm{x}))
+  \begin{split}
+  f(\bm{x;W_{input},b_{input},W_{output},b_{output}}) \\
+  = f_{2}(f_{1}(\bm{x}))
+  \end{split}
 \end{equation}
 
 After using an affine transformation, the hidden units are computed by a
-nonlinear function called an activation function:
+nonlinear function $g$ called an activation function:
 
 \begin{equation} 
-  h = g(\bm{W}^{T}\bm{x+B})
+  h = g(\bm{W_{input}}^{T}\bm{x+b_{input}})
 \end{equation}
 
-The default activation function is the \textbf{rectified linear unit} or ReLU
-defined as:
+The common activation function in deep learning is the \textbf{rectified linear
+unit} or ReLU defined as:
 
 \begin{equation} 
   g(z) = \max\{0,z\}
@@ -84,28 +85,32 @@ defined as:
 
 \input{sections/scientific/fr2/relu.tex}
 
-The complete feedforward network looks as follow:
+The complete feedforward network looks as follows:
 \begin{equation} 
-  f(\bm{x;W,B,w,b}) = \bm{w}^{T}\max\{0,\bm{W}^{T}\bm{x+B}\}+\bm{b}
+  \begin{split}
+  f(\bm{x;W_{input},b_{input},W_{output},b_{output}}) \\
+  = \bm{W_{output}}^{T}\max\{0,\bm{W_{input}}^{T}\bm{x+b_{input}}\}+\bm{b_{output}}
+\end{split}
 \end{equation}
 
 A representation of a single perceptron and its position in an MLP is given in
-figure~\ref{mlp}.\\
+Figure~\ref{ff}.\\
 
 \input{sections/scientific/fr2/mlpfigure.tex}
 
 \textbf{Gradient-Based Learning.} During the training of the model, deep
-learning algorithms solve an optimization problem. The Problem is to minimize
-some function $f(x)$ by changing its input $x$. This function is referred to as
-the objective function also called the loss function. With the loss function the
-deep learning model optimizes the approximation of $f^{*}$. An example of a loss
-function for our MLP can be the mean squared error (MSE):
+learning algorithms solve an optimization problem. The problem is to minimize
+the error represented by an objective function (loss).  With the loss function
+the deep learning model optimizes the approximation of $f^{*}$. An example of a
+loss function for our MLP can be the mean squared error (MSE):
 
 \begin{equation} 
   \frac{1}{n}\sum_{i=1}^n(f^*(\bm x_i)-f(\bm x_i;\bm{\theta}))^2
 \end{equation}
 
-ANNs usually used gradient-based optimizers to obtain a minimal loss function.\\
+ANNs usually uses gradient-based optimizers to obtain a minimal loss function.\\
+
+%rephrase
 
 \textbf{Back-propagation.} We call forward propagation when an MLP takes
 $\bm{x}$ as input and computes $\bm{\hat{y}}$ as output since the information
@@ -113,5 +118,5 @@ passes through the network. The back-propagation algorithm passes information
 from the loss function backwards through the network. This algorithm computes
 the gradient while passing back the network. With this gradient, another
 algorithm called the \textit{stochastic gradient descent} performs the learning
-of the $weight = \{W,w\}$ and the $biases = \{B,b\}$ and adjusts them to
-minimize the lost function.
+of the $weight = \{W_{input},W_{output}\}$ and the $biases =
+\{b_{input},b_{outpu}\}$ and adjusts them to minimize the loss function.
