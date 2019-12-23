@@ -7,15 +7,17 @@
 \usepackage{pgfplots}
 \pgfplotsset{width=8cm,compat=1.9}
 \usepackage{graphicx}
-\graphicspath{ {./figures/} }
+\graphicspath{{./figures/}}
 \usepackage{multirow}
 \usepackage{enumitem}
 \usepackage{bm}
 \usepackage{amsmath}
 \usepackage{tikz}
+\usepackage{subfig}
 \usetikzlibrary{positioning, fit, arrows.meta, shapes, arrows}
 \newcommand{\empt}[2]{$#1^{\langle #2 \rangle}$}
 
+\newenvironment{normalize}{\leftskip-\leftmargin}{\par}
 \usepackage{listings}
 \usepackage{xcolor}
 

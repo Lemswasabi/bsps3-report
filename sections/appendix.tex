@@ -3,6 +3,77 @@
 \clearpage
 \section{Appendix}
 
+% \begin{enumerate}[label=\arabic*.]
+%   \item Feedforward:
+    \begin{figure}[h]
+      \centering
+      \subfloat[Feedforward'accuracy using SGD, although SGD didn't work well.]{{\includegraphics[scale=0.5]{sgdffa.png} }}%
+      \qquad
+      \subfloat[Feedforward'accuracy using Adam.]{{\includegraphics[scale=0.5]{adamffa.png} }}%
+      \caption{Accuracy comparison between feedforward using SGD and Adam.}%
+      \label{ffa}
+    \end{figure}
+    \begin{figure}[h]
+      \centering
+      \subfloat[Feeforward'loss using SGD, loss returns NaN.]{{\includegraphics[scale=0.5]{sgdffl.png} }}%
+      \qquad
+      \subfloat[Feeforward'loss using Adam.]{{\includegraphics[scale=0.5]{adamffl.png} }}%
+      \caption{Loss comparison between feedforward using SGD and Adam.}%
+      \label{ffl}
+    \end{figure}
+  % \item RNN:
+    \begin{figure}[h]
+      \centering
+      \subfloat[RNN's accuracy using SGD.]{{\includegraphics[scale=0.5]{sgdrnna.png} }}%
+      \qquad
+      \subfloat[RNN's accuracy using Adam.]{{\includegraphics[scale=0.5]{adamrnna.png} }}%
+      \caption{Accuracy comparison between RNN using SGD and Adam.}%
+      \label{rnna}
+    \end{figure}
+    \begin{figure}[h]
+      \centering
+      \subfloat[RNN's loss using SGD.]{{\includegraphics[scale=0.5]{sgdrnnl.png} }}%
+      \qquad
+      \subfloat[RNN's loss using Adam.]{{\includegraphics[scale=0.5]{adamrnnl.png} }}%
+      \caption{Loss comparison between RNN using SGD and Adam.}%
+      \label{rnnl}
+    \end{figure}
+  % \item LSTM:
+    \begin{figure}[h]
+      \centering
+      \subfloat[LSTM's accuracy using SGD.]{{\includegraphics[scale=0.5]{sgdlstma.png} }}%
+      \qquad
+      \subfloat[LSTM's accuracy using Adam.]{{\includegraphics[scale=0.5]{adamlstma.png} }}%
+      \caption{Accuracy comparison between RNN using SGD and Adam.}%
+      \label{lstma}
+    \end{figure}
+    \begin{figure}[h]
+      \centering
+      \subfloat[LSTM's loss using SGD.]{{\includegraphics[scale=0.5]{sgdlstml.png} }}%
+      \qquad
+      \subfloat[LSTM's loss using Adam.]{{\includegraphics[scale=0.5]{adamlstml.png} }}%
+      \caption{Loss comparison between LSTM using SGD and Adam.}%
+      \label{lstml}
+    \end{figure}
+  % \item GRU:
+    \begin{figure}[h]
+      \centering
+      \subfloat[GRU's accuracy using SGD.]{{\includegraphics[scale=0.5]{sgdgrua.png} }}%
+      \qquad
+      \subfloat[GRU's accuracy using Adam.]{{\includegraphics[scale=0.5]{adamgrua.png} }}%
+      \caption{Accuracy comparison between RNN using SGD and Adam.}%
+      \label{grua}
+    \end{figure}
+    \begin{figure}[h]
+      \centering
+      \subfloat[GRU's loss using SGD.]{{\includegraphics[scale=0.5]{sgdgrul.png} }}%
+      \qquad
+      \subfloat[GRU's loss using Adam.]{{\includegraphics[scale=0.5]{adamgrul.png} }}%
+      \caption{Loss comparison between GRU using SGD and Adam.}%
+      \label{grul}
+    \end{figure}
+% \end{enumerate}
+
 \begin{figure}[h]
   \centering
   \lstinputlisting{sections/scientific/fr1/mfccsnippet.py}

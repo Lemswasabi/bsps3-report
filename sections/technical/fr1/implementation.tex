@@ -1,14 +1,22 @@
 \subsubsection{Implementation of classification models}~\\
 
-% We present the implementation of our classificatin models
+In this section, the implementation of the four ANN models are presented.\\
 
-In this section, the implementation of the four ANN models are presented.
+First of all, we initialize the training and testing sets:
+\lstinputlisting{sections/technical/fr1/input.py}
 
-% feedforward
-\lstlistinginput{sections/technical/fr1/feedforward.py}
-% rnn
-\lstlistinginput{sections/technical/fr1/feedforward.py}
-% lstm
-\lstlistinginput{sections/technical/fr1/feedforward.py}
-% gru
-\lstlistinginput{sections/technical/fr1/feedforward.py}
+\begin{enumerate}[label=\arabic*.]
+  \item Feedforward:
+    \lstinputlisting{sections/technical/fr1/feedforward.py}
+    We used the Sequential model to stack four Dense layers. The
+  \begin{normalize}
+    testtesttesttest 
+  \end{normalize}
+  \item RNN:
+    \lstinputlisting{sections/technical/fr1/rnn.py}
+  \item LSTM:
+    \lstinputlisting{sections/technical/fr1/lstm.py}
+  \item GRU:
+    \lstinputlisting{sections/technical/fr1/gru.py}
+\end{enumerate}
+

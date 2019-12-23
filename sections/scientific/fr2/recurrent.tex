@@ -91,13 +91,12 @@ the weight matrices.\\
 
 %problem
 
-\textbf{The Challenge of Long-Term Dependencies.} 
-
-The challenge of learning long-term dependencies is that gradients, propagated
-through a very deep RNN, can vanish or explode. Gradients can vanish when the
-gradients are converging to $0$ and therefore the weights won't be updated
-while learning. Exploding gradients happen if the gradients are too large and
-the loss function will never reach the optimized minimum. There is a solution
-to this problem. We will introduce Long Short-term Memory (LSTM) and Gated
-Recurrent Unit (GRU) RNNs which are an RNN architecture dealing with this
+\textbf{The Challenge of Long-Term Dependencies.} The challenge of learning
+long-term dependencies is that gradients, propagated through a very deep RNN,
+can vanish or explode. Gradients can vanish when the gradients are converging to
+$0$ and therefore the weights won't be updated while learning. Exploding
+gradients happen if the gradients are too large and the loss function will never
+reach the optimized minimum. There is a solution to this problem. We will
+introduce Long Short-term Memory (LSTM) and Gated Recurrent Unit (GRU) RNNs
+which are an RNN architecture dealing with this
 challenge.\cite{doi:10.1162/neco.1997.9.8.1735}
