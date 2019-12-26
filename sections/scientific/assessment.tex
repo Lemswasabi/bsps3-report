@@ -1,4 +1,4 @@
-% 
+% corrected LN 81
 
 \subsection{Assessment}
 \subsubsection{NFR01: Performance evaluation}~\\
@@ -8,12 +8,12 @@ Section~\ref{ann} are evaluated. We use the English and Luxembourgish dataset
 for the performance analysis.\\
 
 The first step is to choose an optimal optimizer. The choice is between using
-the stochastic gradient descent (SGD) or the Adam optimizer. The second is a
+the stochastic gradient descent (SGD) or Adam optimizer. The latter is a
 combination of two extensions of SGD, Adaptive Gradient Algorithm (AdaGrad) and
 Root Mean Square Propagation (RMSProp)~\cite{Adam}. The four models will be
-trained on the english dataset to designate an optimal optimizer and number of
+trained on the English dataset to designate an optimal optimizer and number of
 epochs. Their training will be visualized with $60\ epochs$ each. The training
-vizualization are in the appendix as follows:\\
+visualization is in the appendix as follows:\\
 
 \begin{enumerate}[label=\arabic*.]
   \item Feedforward
@@ -37,6 +37,7 @@ vizualization are in the appendix as follows:\\
       \item loss in Figure.\ref{grul}
     \end{itemize}
 \end{enumerate}~\\
+
 Let $n=30$ for the number of epochs. The two optimizers return the following
 results:
 
@@ -62,14 +63,14 @@ results:
 
 With SGD, the feedforward model didn't train and its loss gives $NaN$. However,
 we still can choose an optimizer since the results using the Adam optimizer
-yield better accuracies compared to SGD. For the following investigation, the
-Adam optimizer is considered.\\
+yield better accuracies compared to SGD. For the following investigation,
+the Adam optimizer is considered.\\
 
 The next step is to choose the number of epochs which will be used for the
 performance analysis. The graphs show the loss converges around $40$ epochs.
 Therefore, we choose $epochs = 40$.\\
 
-Let $epochs = 40$ we evaluate each model's performance, we have:
+Let $epochs = 40$ to evaluate each model's performance, we have:
 
 \begin{table}[H]
     \centering
@@ -125,10 +126,10 @@ The following testing results were trained on the Luxembourgish dataset:
 \end{table}
 
 The results show that RNN, LSTM and GRU generalize better than feedforward.
-LSTM and GRU are outperforming RNN in this results as well. LSTM is overfitting
+LSTM and GRU are outperforming RNN in these results as well. LSTM is overfitting
 during training. The high accuracy of LSTM and GRU can be explained by the small
-dataset. The dataset contains only 50 instances of a spoken word and is speaker
-dependent. The results of LSTM and GRU will drop if the dataset grows and
-contains multiple speakers.
+dataset. The dataset contains only 50 instances of a spoken word and is
+speaker-dependent. The results of LSTM and GRU will drop if the dataset grows
+and contains a variety of speakers.
 
 \textcolor{gray}{add results for bigger luxembourg dataset.}

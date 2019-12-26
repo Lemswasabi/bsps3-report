@@ -1,4 +1,4 @@
-% corrected VD
+% corrected VD 89
 
 \subsubsection{Feedforward Neural Network}~\\
 
@@ -26,8 +26,8 @@ $f^{*}(\bm{x})$ obtained with different training points where every example
 $\bm{x}$ is referring to a label $y \approx f^{*}(\bm{x})$. These examples
 determine how the output layer should approximate a value close to $y$ with each
 example $\bm{x}$. The other layers are called the \textbf{hidden layers} because
-the training examples are not determining their behaviour and it doesn't contain
-the desired output of each layer. Therefore, a learning algorithm has to
+the training examples are not determining their behaviour and it does not
+contain the desired output of each layer. Therefore, a learning algorithm has to
 determine how to utilize the hidden layers to obtain a good approximation of
 $f^{*}(\bm{x})$.\\
 
@@ -40,23 +40,23 @@ calculating its proper activation value.\\
 We will present a simple MLP with one hidden layer which contains hidden units.
 The hidden layer represents a vector of hidden units $\bm{h}$ which are
 calculated by a function $f_{1}(\bm{x;\theta})$. $\bm{\theta}$ consists of
-$\bm{W_{input}}$ and $\bm{b_{input}}$ which are the $weights$ and $biases$ repectively such
-that:
+$\bm{W}$ and $\bm{b}$ which are the $weights$ and $biases$
+repectively such that:
 
 \begin{equation}
   \begin{split}
-    h & = f_{1}(\bm{x;W_{input},b_{input}}) \\
-    \Leftrightarrow h & = \bm{W_{input}}^{T}\bm{x}+\bm{b_{input}}
+    h & = f_{1}(\bm{x;W,b}) \\
+    \Leftrightarrow h & = \bm{W}^{T}\bm{x}+\bm{b}
   \end{split}
 \end{equation}
 
 $\bm{h}$ is then used as input for the second layer which is the output layer;
-$f_{2}(\bm{h;W_{output},b_{output}})$. 
+$f_{2}(\bm{h;V,c})$, with $V$ being the weigth matrix and $c$ the bias vector. 
 
 \begin{equation}
   \begin{split}
-    y & = f_{2}(\bm{h;W_{output},b_{output}}) \\
-    \Leftrightarrow y & = \bm{W_{output}}^{T}\bm{h}+\bm{b_{output}}
+    y & = f_{2}(\bm{h;V,c}) \\
+    \Leftrightarrow y & = \bm{V}^{T}\bm{h}+\bm{c}
   \end{split}
 \end{equation}
 
@@ -64,7 +64,7 @@ The network can be illustrated as a chain of two functions:
 
 \begin{equation} 
   \begin{split}
-  f(\bm{x;W_{input},b_{input},W_{output},b_{output}}) \\
+  f(\bm{x;W,b,V,c}) \\
   = f_{2}(f_{1}(\bm{x}))
   \end{split}
 \end{equation}
@@ -73,7 +73,7 @@ After using an affine transformation, the hidden units are computed by a
 nonlinear function $g$ called an activation function:
 
 \begin{equation} 
-  h = g(\bm{W_{input}}^{T}\bm{x+b_{input}})
+  h = g(\bm{W}^{T}\bm{x+b})
 \end{equation}
 
 The common activation function in deep learning is the \textbf{rectified linear
@@ -88,8 +88,8 @@ unit} or ReLU defined as:
 The complete feedforward network looks as follows:
 \begin{equation} 
   \begin{split}
-  f(\bm{x;W_{input},b_{input},W_{output},b_{output}}) \\
-  = \bm{W_{output}}^{T}\max\{0,\bm{W_{input}}^{T}\bm{x+b_{input}}\}+\bm{b_{output}}
+  f(\bm{x;W,b,V,c}) \\
+  = \bm{V}^{T}\max\{0,\bm{W}^{T}\bm{x+b}\}+\bm{c}
 \end{split}
 \end{equation}
 
@@ -102,21 +102,22 @@ Figure~\ref{ff}.\\
 learning algorithms solve an optimization problem. The problem is to minimize
 the error represented by an objective function (loss).  With the loss function
 the deep learning model optimizes the approximation of $f^{*}$. An example of a
-loss function for our MLP can be the mean squared error (MSE):
+loss function for our MLP can be the mean squared error (MSE):\\
 
 \begin{equation} 
   \frac{1}{n}\sum_{i=1}^n(f^*(\bm x_i)-f(\bm x_i;\bm{\theta}))^2
-\end{equation}
+\end{equation}~\\
 
 ANNs usually uses gradient-based optimizers to obtain a minimal loss function.\\
 
-%rephrase
 
-\textbf{Back-propagation.} We call forward propagation when an MLP takes
-$\bm{x}$ as input and computes $\bm{\hat{y}}$ as output since the information
-passes through the network. The back-propagation algorithm passes information
-from the loss function backwards through the network. This algorithm computes
-the gradient while passing back the network. With this gradient, another
-algorithm called the \textit{stochastic gradient descent} performs the learning
-of the $weight = \{W_{input},W_{output}\}$ and the $biases =
-\{b_{input},b_{outpu}\}$ and adjusts them to minimize the loss function.
+\textbf{Back-propagation.} Gradient descent is a back-propagation algorithm
+which performs a backward pass through the network while adjusting the model's
+parameters which are the weights and biases. It repeatedly modifies the
+parameters of the units in the network to minimize the difference measure
+between the predicted and desired output vector.  The algorithm passes
+information from the loss function backwards through the network. It computes
+the gradient while passing back the network.  There are three types of gradient
+descent, namely batch gradient, stochastic gradient descent (SGD) and mini-batch
+gradient descent. Compared to batch gradient descent, SGD selects randomly a
+data sample instead of a whole data batch for each backwards iteration.

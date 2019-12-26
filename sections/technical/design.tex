@@ -1,3 +1,5 @@
+% corrected LN 74
+
 \subsection{Design}
 
 % Keras api definition
@@ -43,8 +45,8 @@ modl.compile(loss='categorical_crossentropy',
 model.fit(x_train, y_train, epochs=5, batch_size=32)
 \end{lstlisting}
 
-\noindent To evaluate the performance of the model, the \textit{.evaluate} is
-used:
+\noindent To evaluate the performance of the model, the \textit{.evaluate()} is
+called:
 
 \begin{lstlisting}
 loss_and_metrics = model.evaluate(x_test, y_test, batch_size=128)
