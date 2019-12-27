@@ -1,17 +1,22 @@
-% corrected VD 81
+% corrected VD 93
 
 \begin{abstract}
 
-%feed back into units
-%memory
-%-> time series
-
-%LSTM a example of rnn
-
+Luxembourgish is a West Germanic language which is mainly spoken in Luxembourg.
+It is spoken by roughly 390000 people worldwide. Luxembourgish remains one of
+Europe's under-described and under-resourced languages. In this paper, the focus
+will be on isolated Luxembourgish word recognition. End-to-end automatic speech
+recognition (ASR) is the current state-of-the-art. Deep learning replaces most
+modules, such as language models or audio models, which were used in previous
+ASR with a single model. To the best of our knowledge, there exist no end-to-end
+continuous speech recognition for the Luxembourgish language. Thus efforts were
+made on collecting a small audio dataset containing Luxembourgish spoken words
+which are speaker-dependent. We apply RNN and feedforward Neural Networks as the
+baseline for the recognition and compare it to more sophisticated RNN models.
 Recurrent Neural Networks (RNN) use their internal state to operate on data
-time-series. One of the domains in which RNNs are applied is speech recognition.
-In this paper, the focus will be on the task of end-to-end isolated word
-recognition.  We apply RNN and feedforward Neural Networks as the baseline for
-the recognition and compare it to more sophisticated RNN models.
+time-series. Combined with connectionist temporal classification (CTC) models,
+they represent the current state-of-the-art in ASR. The accuracy to recognize
+Luxembourgish words obtained with gated RNNs, such as long short-term memory
+(LSTM) and gated recurrent units (GRU), were both roughly 0.99\%
 
 \end{abstract}

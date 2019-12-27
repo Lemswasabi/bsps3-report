@@ -16,14 +16,16 @@ First of all, we initialize the training and testing sets:
     dense layers, dropout layers are stacked. Theses dropout layers are dropping
     units from the model to prevent overfitting. The parameter \textit{loss} of
     the \textit{.compile()} function is set to
-    \textit{'sparse\_categorical\_crossentropy'} which sets the model to take in
-    1D vectors instead of a matrix.\\
+    \textit{'sparse\_categorical\_crossentropy'} since the output should be an
+    integer tensor instead of a binary vector.\\
 
   \begin{normalize}
     Before continuing with the recurrent models, the input data has to be
     reshaped since RNN, LSTM and GRU are taking in 3D shaped input data:
-    \lstinputlisting{sections/technical/fr1/inputchange.py}~\\
+
+    \lstinputlisting{sections/technical/fr1/inputchange.py}
   \end{normalize}
+
   \item RNN:
     \lstinputlisting{sections/technical/fr1/rnn.py}
     The RNN model is implemented in the same manner as the feedforward model.

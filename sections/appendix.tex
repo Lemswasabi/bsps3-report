@@ -3,27 +3,30 @@
 \newpage
 \clearpage
 \section{Appendix}
+\textbf{Training on English dataset:}
+
+% train on 13311 samples and testing on 4438 samples
 
 % \begin{enumerate}[label=\arabic*.]
 %   \item Feedforward:
-    \begin{figure}[h]
+    \begin{figure}[H]
       \centering
-      \subfloat[Feedforward's accuracy using SGD, although SGD didn't work well.]{{\includegraphics[scale=0.5]{sgdffa.png} }}%
+      \subfloat[Feedforward's accuracy using SGD.]{{\includegraphics[scale=0.5]{sgdffa.png} }}%
       \qquad
       \subfloat[Feedforward's accuracy using Adam.]{{\includegraphics[scale=0.5]{adamffa.png} }}%
       \caption{Accuracy comparison between feedforward using SGD and Adam.}%
       \label{ffa}
     \end{figure}
-    \begin{figure}[h]
+    \begin{figure}[H]
       \centering
-      \subfloat[Feeforward's loss using SGD, loss returns NaN.]{{\includegraphics[scale=0.5]{sgdffl.png} }}%
+      \subfloat[Feeforward's loss using SGD.]{{\includegraphics[scale=0.5]{sgdffl.png} }}%
       \qquad
       \subfloat[Feeforward's loss using Adam.]{{\includegraphics[scale=0.5]{adamffl.png} }}%
       \caption{Loss comparison between feedforward using SGD and Adam.}%
       \label{ffl}
     \end{figure}
   % \item RNN:
-    \begin{figure}[h]
+    \begin{figure}[H]
       \centering
       \subfloat[RNN's accuracy using SGD.]{{\includegraphics[scale=0.5]{sgdrnna.png} }}%
       \qquad
@@ -40,7 +43,7 @@
       \label{rnnl}
     \end{figure}
   % \item LSTM:
-    \begin{figure}[h]
+    \begin{figure}[H]
       \centering
       \subfloat[LSTM's accuracy using SGD.]{{\includegraphics[scale=0.5]{sgdlstma.png} }}%
       \qquad
@@ -48,7 +51,7 @@
       \caption{Accuracy comparison between RNN using SGD and Adam.}%
       \label{lstma}
     \end{figure}
-    \begin{figure}[h]
+    \begin{figure}[H]
       \centering
       \subfloat[LSTM's loss using SGD.]{{\includegraphics[scale=0.5]{sgdlstml.png} }}%
       \qquad
@@ -57,7 +60,7 @@
       \label{lstml}
     \end{figure}
   % \item GRU:
-    \begin{figure}[h]
+    \begin{figure}[H]
       \centering
       \subfloat[GRU's accuracy using SGD.]{{\includegraphics[scale=0.5]{sgdgrua.png} }}%
       \qquad
@@ -65,7 +68,7 @@
       \caption{Accuracy comparison between RNN using SGD and Adam.}%
       \label{grua}
     \end{figure}
-    \begin{figure}[h]
+    \begin{figure}[H]
       \centering
       \subfloat[GRU's loss using SGD.]{{\includegraphics[scale=0.5]{sgdgrul.png} }}%
       \qquad
@@ -74,6 +77,40 @@
       \label{grul}
     \end{figure}
 % \end{enumerate}
+
+ \newpage
+
+\textbf{Training on Luxembourghish dataset.}\\
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{luxffa.png}
+  \caption{Training and validation accuracy of feedforward model trained on
+  Luxembourgish dataset.}
+  \label{grua}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{luxffl.png}
+  \caption{Training and validation loss of feedforward model trained on
+  Luxembourgish dataset.}
+  \label{grul}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{luxrnna.png}
+  \caption{Training and validation accuracy of RNN model trained on
+  Luxembourgish dataset.}
+  \label{grua}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{luxrnnl.png}
+  \caption{Training and validation loss of RNN model trained on Luxembourgish
+  dataset.}
+\end{figure}
 
 \begin{figure}[h]
   \centering
