@@ -19,9 +19,9 @@
     \end{figure}
     \begin{figure}[H]
       \centering
-      \subfloat[Feeforward's loss using SGD.]{{\includegraphics[scale=0.5]{sgdffl.png} }}%
+      \subfloat[Feedforward's loss using SGD.]{{\includegraphics[scale=0.5]{sgdffl.png} }}%
       \qquad
-      \subfloat[Feeforward's loss using Adam.]{{\includegraphics[scale=0.5]{adamffl.png} }}%
+      \subfloat[Feedforward's loss using Adam.]{{\includegraphics[scale=0.5]{adamffl.png} }}%
       \caption{Loss comparison between feedforward using SGD and Adam.}%
       \label{ffl}
     \end{figure}
@@ -42,13 +42,26 @@
       \caption{Loss comparison between RNN using SGD and Adam.}%
       \label{rnnl}
     \end{figure}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.4]{300rnna.png}
+      \caption{Training and validation accuracy of RNN model.}
+      \label{300rnna}
+    \end{figure}
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.3]{300rnnl.png}
+      \caption{Training and validation loss of RNN model.}
+      \label{300rnnl}
+    \end{figure}
   % \item LSTM:
     \begin{figure}[H]
       \centering
       \subfloat[LSTM's accuracy using SGD.]{{\includegraphics[scale=0.5]{sgdlstma.png} }}%
       \qquad
       \subfloat[LSTM's accuracy using Adam.]{{\includegraphics[scale=0.5]{adamlstma.png} }}%
-      \caption{Accuracy comparison between RNN using SGD and Adam.}%
+      \caption{Accuracy comparison between LSTM using SGD and Adam.}%
       \label{lstma}
     \end{figure}
     \begin{figure}[H]
@@ -65,7 +78,7 @@
       \subfloat[GRU's accuracy using SGD.]{{\includegraphics[scale=0.5]{sgdgrua.png} }}%
       \qquad
       \subfloat[GRU's accuracy using Adam.]{{\includegraphics[scale=0.5]{adamgrua.png} }}%
-      \caption{Accuracy comparison between RNN using SGD and Adam.}%
+      \caption{Accuracy comparison between GRU using SGD and Adam.}%
       \label{grua}
     \end{figure}
     \begin{figure}[H]
@@ -78,15 +91,13 @@
     \end{figure}
 % \end{enumerate}
 
- \newpage
-
 \textbf{Training on Luxembourghish dataset.}\\
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.5]{luxffa.png}
   \caption{Training and validation accuracy of feedforward model trained on
   Luxembourgish dataset.}
-  \label{grua}
+  \label{luxffa}
 \end{figure}
 
 \begin{figure}[h]
@@ -94,7 +105,7 @@
   \includegraphics[scale=0.5]{luxffl.png}
   \caption{Training and validation loss of feedforward model trained on
   Luxembourgish dataset.}
-  \label{grul}
+  \label{luxffl}
 \end{figure}
 
 \begin{figure}[h]
@@ -102,7 +113,7 @@
   \includegraphics[scale=0.5]{luxrnna.png}
   \caption{Training and validation accuracy of RNN model trained on
   Luxembourgish dataset.}
-  \label{grua}
+  \label{luxrnna}
 \end{figure}
 
 \begin{figure}[h]
@@ -110,6 +121,39 @@
   \includegraphics[scale=0.5]{luxrnnl.png}
   \caption{Training and validation loss of RNN model trained on Luxembourgish
   dataset.}
+  \label{luxrnnl}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{luxlstma.png}
+  \caption{Training and validation accuracy of LSTM model trained on
+  Luxembourgish dataset.}
+  \label{luxlstma}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{luxlstml.png}
+  \caption{Training and validation loss of LSTM model trained on Luxembourgish
+  dadataset.}
+  \label{luxlstml}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{luxgrua.png}
+  \caption{Training and validation accuracy of GRU model trained on Luxembourgish
+  dadataset.}
+  \label{luxgrua}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{luxgrul.png}
+  \caption{Training and validation loss of GRU model trained on Luxembourgish
+  dadataset.}
+  \label{luxgrul}
 \end{figure}
 
 \begin{figure}[h]

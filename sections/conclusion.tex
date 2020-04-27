@@ -3,42 +3,26 @@
 \section{Conclusion}
 
 In this paper, end-to-end isolated word recognition using deep neural networks
-is treated. Four different ANN models were investigated. The focus of this paper
-is using RNN architectures for end-to-end speech recognition. Gated RNNs were
-studied why they outperform vanilla RNN units and how they deal with long-term
-dependencies. The results showed, that gated RNNs outperform basic feedforward
-and recurrent neural networks. The performance analysis can be consulted in
-Section.~\ref{assessment}\\
+is presented. Four different ANN models were investigated. The focus of this
+paper is using RNN architectures for end-to-end speech recognition and
+investigating whether gated RNNs outperform vanilla RNN units and how they deal
+with long-term dependencies. The results showed, that gated RNNs substantially
+outperform basic feedforward and recurrent neural networks. The performance
+analysis can be consulted in Section~\ref{assessment}\\
 
-The objective of this paper is to recognize Luxembourgish words. To the best of
-our knowledge, there is a lack of continuous speech dataset in Luxembourgish.
-Thus efforts were put to collect a small dataset containing Luxembourgish spoken
-words $w \in \{'Null',\dots,'Neng'\}$. This dataset was recorded by one person
-which makes it speaker-dependent speech recognition. In
-Section.~\ref{datasetlux} the methods used to collect the dataset were
-elaborated. The before mentioned ANN architectures were applied to our collected
-Luxembourgish dataset and yielded very good results: 
+A further objective of this paper is to recognize Luxembourgish words. To the
+best of our knowledge, there is a lack of continuous speech dataset in
+Luxembourgish. Thus efforts were put to collect a small dataset containing
+Luxembourgish spoken words $w \in \{'Null',\dots,'Neng'\}$. This dataset was
+recorded by one person which makes it speaker-dependent speech recognition. In
+Section~\ref{datasetlux} the methods used to collect the dataset were
+elaborated. Four previously discussed ANN architectures were applied to our
+collected Luxembourgish dataset and yielded excellent performance with accuracy
+close to 1.\\
 
-\begin{table}[H]
-    \centering
-    \resizebox{\columnwidth}{!}{%
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-        \hline
-        \multirow{2}{*}{Optimizer} & \multicolumn{2}{c|}{FF} &
-        \multicolumn{2}{c|}{RNN} & \multicolumn{2}{c|}{LSTM} &
-        \multicolumn{2}{c|}{GRU} \\
-        \cline{2-9}
-        & {acc} & {loss} & {acc} & {loss} & {acc} & {loss} & {acc} & {loss}\\
-        \hline
-        Adam & 0.84 & 0.59 & 0.73 & 0.83 & 1.0 & 0.02 & 0.99 & 0.02 \\ \hline
-    \end{tabular}%
-    }
-\end{table}
+Continuation of this project would be to extend the Luxembourgish dataset with
+continuous speech or to add instances spoken by multiple speakers.\\
 
-Some continuation of this project would be to extend the Luxembourgish dataset
-with continuous speech or to add instances spoken by multiple speakers.\\
-
-In my opinion, I find it interesting to work with deep neural networks
-and their practical use. This project will give me the required background to
-start on my next BSP which deals with attention-based models for speech
-recognition.
+In my opinion, I find it interesting to work with deep neural networks and their
+practical use. This project will give me the required background to start on my
+next BSP which deals with attention-based models for speech recognition.

@@ -11,8 +11,8 @@ Learning.~\cite{chollet2015keras}\\
 % getting started
 
 The main data structure in Keras is a model. The common model is the
-\textit{Sequential} model which organizes layer in a linear stack. An example of
-a \textit{Sequential} model in Python:
+\textit{Sequential} model which organizes layers in a linear stack. An example
+of a \textit{Sequential} model in Python is given below:
 
 \begin{lstlisting}
 from keras.models import Sequential
@@ -31,7 +31,7 @@ model.add(Dense(unit=10, activation='softmax'))
 \end{lstlisting}
 
 \noindent After stacking up the model, its learning process has to be configured
-with \textit{.compile()}:
+with \textit{.compile()} function:
 
 \begin{lstlisting}
 modl.compile(loss='categorical_crossentropy', 
@@ -45,8 +45,8 @@ modl.compile(loss='categorical_crossentropy',
 model.fit(x_train, y_train, epochs=5, batch_size=32)
 \end{lstlisting}
 
-\noindent To evaluate the performance of the model, the \textit{.evaluate()} is
-called:
+\noindent To evaluate the performance of the model, the \textit{.evaluate()}
+function is called:
 
 \begin{lstlisting}
 loss_and_metrics = model.evaluate(x_test, y_test, batch_size=128)

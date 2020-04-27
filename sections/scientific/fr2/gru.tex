@@ -5,8 +5,8 @@
 Identical to LSTM units, the gated recurrent unit (GRU) consists of gated units
 which control the flow of information through the unit, although without having
 a dedicated memory cell. Compared to LSTM units, GRUs don't have an output gate.
-The output gate is responsible to control the amount of memory content seen by
-the other units in the network. Thus GRU exposes its entire content without
+The output gate controls the amount of memory content seen by the other units in
+the network. Thus GRU exposes its entire content without
 control.~\cite{DBLP:journals/corr/ChungGCB14}\\
 
 The activation of a GRU unit is computed with:
@@ -25,11 +25,11 @@ is exposed. The candidate activation is given by:
 \begin{equation}
   \tilde{h}_t=\tanh(Wx_t+U(r_t\odot h_{t-1}))
 \end{equation}
-Where $r_t$ is a reset gate and is computed comparably to the update gate:
+where $r_t$ is a reset gate and is computed comparably to the update gate:
 \begin{equation}
   r_t=\sigma(W_r x_t+U_r h_{t-1})
 \end{equation}
 
-See the illustration of a GRU uni in Figure~\ref{grucell}.
+See the illustration of a GRU unit in Figure~\ref{grucell}.
 
 \input{sections/scientific/fr2/grucell.tex}

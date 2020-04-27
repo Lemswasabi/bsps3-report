@@ -64,11 +64,11 @@
     \draw[stateTransition] (s3) -- node[right] {$V$} (o3);
 
   \end{tikzpicture}
-  \caption{this computational graph is for calculating the training loss of an
-    RNN which labels a sequence of $x$ values to corresponding output $o$
-    values. A loss function $L$ is calculating the distance from $o$ to the
-    corresponding $y$ target. On the left, we have the network as a recurrent
-  graph. On the right, we have its unfolded computational
+  \caption{This computational graph is for calculating the training loss of an
+    RNN which labels a sequence of input values $x$ to corresponding output
+    values $o$. A loss function $L$ is calculating the distance from $o$ to the
+    corresponding target $y$. On the left, the network is represented as a
+  recurrent graph. On the right, the same network is unfolded as a computational
 graph.~\cite{Goodfellow-et-al-2016}}
   \label{noutputrnn}
 \end{figure}

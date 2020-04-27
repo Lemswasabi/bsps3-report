@@ -17,32 +17,32 @@ combination of two extensions of SGD, Adaptive Gradient Algorithm (AdaGrad) and
 Root Mean Square Propagation (RMSProp)~\cite{Adam}. The four models will be
 trained on the English dataset to designate the right optimizer and number of
 epochs. Their training will be visualized with $60\ epochs$ each. The training
-visualization is in the appendix as follows:\\
+visualization is given in the appendix as follows:\\
 
 \begin{enumerate}[label=\arabic*.]
-  \item Feedforward
+  \item Feedforward Neural Network:
     \begin{itemize}
-      \item Validation accuracy in Figure.\ref{ffa}
-      \item Validation loss in Figure.\ref{ffl}
+      \item Validation accuracy in Figure~\ref{ffa}.
+      \item Validation loss in Figure~\ref{ffl}.
     \end{itemize}
-  \item RNN
+  \item RNN:
     \begin{itemize}
-      \item Validation accuracy in Figure.\ref{rnna}
-      \item Validation loss in Figure.\ref{rnnl}
+      \item Validation accuracy in Figure~\ref{rnna}.
+      \item Validation loss in Figure~\ref{rnnl}.
     \end{itemize}
-  \item LSTM
+  \item LSTM:
     \begin{itemize}
-      \item Validation accuracy in Figure.\ref{lstma}
-      \item Validation loss in Figure.\ref{lstml}
+      \item Validation accuracy in Figure~\ref{lstma}.
+      \item Validation loss in Figure~\ref{lstml}.
     \end{itemize}
-  \item GRU
+  \item GRU:
     \begin{itemize}
-      \item Validation accuracy in Figure.\ref{grua}
-      \item Validation loss in Figure.\ref{grul}
+      \item Validation accuracy in Figure~\ref{grua}.
+      \item Validation loss in Figure~\ref{grul}.
     \end{itemize}
 \end{enumerate}~\\
 
-Let $n=60$ for the number of epochs. The two optimizers return the following
+Let $n=60$ be the number of epochs. The two optimizers return the following
 testing accuracies (acc) and losses:
 
 \begin{table}[H]
@@ -65,15 +65,18 @@ testing accuracies (acc) and losses:
     }
 \end{table}
 
-Tabel~\ref{table:comparison} shows the validation accuracies using the Adam
-optimizer yield better accuracies compared to SGD. For the following
+Table~\ref{table:comparison} shows that the validation accuracies using the Adam
+optimizer yield better accuracies compared to SGD. Therefore, for the following
 investigation, the Adam optimizer is considered.\\
 
 The next step is to choose the number of epochs which will be used for the
-performance analysis. The graphs show the loss converges around $40$ epochs.
-Therefore, we choose $epochs = 40$.\\
+performance analysis. The training visualizations show the loss converges around
+$40$ epochs except for the RNN model. Figure \ref{300rnna} shows that the RNN
+model converges around $220$ epochs with an accuracy of 0.88. The training
+visualization of the RNN model with $300$ epochs is given in
+Figures~\ref{300rnna} and~\ref{300rnnl} in the appendix.\\
 
-Let $epochs = 40$ to evaluate each model's performance, we have:
+Choosing $epochs = 40$ to evaluate each model's performance, we have:
 
 \begin{table}[H]
     \centering
@@ -98,12 +101,15 @@ Let $epochs = 40$ to evaluate each model's performance, we have:
 
 Inspecting the results shows that LSTM and GRU perform better than feedforward
 and RNN. The overall performance is slightly underneath the performance at 60
-epochs. In this case, RNN has the lowest accuracy. This can be explained with
-the vanishing and exploding gradients or because the learning rate was not set
-optimally during training. As expected, LSTM and GRU perform better than RNN
-since they deal with the challenge of long-term dependencies. Compared to
-feedforward, LSTM and GRU have better accuracy since they take advantage of
-their recurrent units to process series data.\\
+epochs. In this case, RNN has the lowest accuracy. This is expected, since
+standard RNNs can't deal with learning long-term temporal dependencies, because
+the gradient of the loss function decays exponentially with time (vanishing
+gradient problem). LSTMs and GRUs use gated units to maintain the information in
+memory for longer periods of time, and to control which information is kept, and
+which is forgotten. This explains substantially better performance obtained
+using LSTM and GRU. Compared to feedforward neural networks, LSTM and GRU have
+better accuracy since they take advantage of their recurrent units to process
+series data.\\
 
 \textbf{Training on Luxembourgish dataset.} The same models used to train on the
 English dataset were used to train on the Luxembourgish dataset. The following
@@ -132,36 +138,33 @@ dataset:
 \end{table}
 
 The results show that LSTM and GRU generalize better than feedforward and RNN.
-LSTM and GRU are outperforming RNN in these results as well. The validation
-accuracies of LSTM and GRU are both roughly 0.99\%. The high accuracy of LSTM
-and GRU can be explained by the small dataset which is also speaker-dependent.
-The results of LSTM and GRU will drop if the dataset grows and contains a
-variety of speakers.\\
+The validation accuracies of LSTM and GRU are both roughly 99\%. The high
+accuracy of LSTM and GRU can be explained by the small dataset which is also
+speaker-dependent.  The results of LSTM and GRU are expected to drop if the
+dataset grows and contains a variety of speakers.\\
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.5]{luxlstma.png}
-  \caption{Training and validation accuracy of LSTM model trained on
-  Luxembourgish dataset.}
-\end{figure}
+The training visualization on the Luxembourgish dataset is given in the appendix
+as follows:\\
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.5]{luxlstml.png}
-  \caption{Training and validation loss of LSTM model trained on Luxembourgish
-  dadataset.}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.5]{luxgrua.png}
-  \caption{Training and validation accuracy of GRU model trained on Luxembourgish
-  dadataset.}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.5]{luxgrul.png}
-  \caption{Training and validation loss of GRU model trained on Luxembourgish
-  dadataset.}
-\end{figure}
+\begin{enumerate}[label=\arabic*.]
+  \item Feedforward Neural Network:
+    \begin{itemize}
+      \item Validation accuracy in Figure~\ref{luxffa}.
+      \item Validation loss in Figure~\ref{luxffl}.
+    \end{itemize}
+  \item RNN:
+    \begin{itemize}
+      \item Validation accuracy in Figure~\ref{luxrnna}.
+      \item Validation loss in Figure~\ref{luxrnnl}.
+    \end{itemize}
+  \item LSTM:
+    \begin{itemize}
+      \item Validation accuracy in Figure~\ref{luxlstma}.
+      \item Validation loss in Figure~\ref{luxlstml}.
+    \end{itemize}
+  \item GRU:
+    \begin{itemize}
+      \item Validation accuracy in Figure~\ref{luxgrua}.
+      \item Validation loss in Figure~\ref{luxgrul}.
+    \end{itemize}
+\end{enumerate}

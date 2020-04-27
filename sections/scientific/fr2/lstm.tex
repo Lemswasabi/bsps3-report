@@ -2,11 +2,6 @@
 
 \subsubsection{Long short-term memory}~\\
 
-As a solution to the challenges of RNNs, effective sequence models used in
-practice are called gated RNNs. These include the long short-term memory (LSTM)
-and the gated recurrent unit (GRU) based RNNs. Gated RNNs are based on the idea
-of creating paths through time that have gradients that neither vanish nor
-explode.\\
 
 An LSTM unit is composed of a memory cell, an input gate, an output gate and a
 forget gate. The cell stores information over a long period and the three gates
@@ -29,6 +24,6 @@ equations:
 where $\sigma$ is the sigmoid function, $\tanh$ is the hyperbolic tangent
 function, $f,i,C^{'},C,o$ are the forget gate, input gate, new memory cell
 content, and memory cell content, output gate respectively. See representation
-of an LSTM cell in figure~\ref{memorycell}.
+of an LSTM cell in Figure~\ref{memorycell}.
 
-\input{sections/scientific/fr2/lstmcell.tex}~\\
+\input{sections/scientific/fr2/lstmcell.tex}

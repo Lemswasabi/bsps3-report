@@ -7,8 +7,8 @@
 Recurrent Neural Networks (RNNs) are a particular architecture of ANNs which can
 process sequential data $S = x_{1},\dots,x_{n}$. In traditional ANN the input
 and output data are assumed to be independent. However, for sequential data,
-this won't be useful. For example, the prediction of the next word in a sentence
-needs the information of which words appeared before. As opposed to MLP, RNN
+this is usually not the case. For example, the prediction of the next word in a
+sentence is dependent on the words that appeared before. As opposed to MLP, RNN
 feeds back their outputs back to their network and thus gain an overview of past
 inputs. To explain how RNNs are implemented, we have to introduce the notion of
 computational graphs. A computational graph is a formal structure representing a
@@ -28,8 +28,8 @@ the time step $t = 3$, we have,
   \end{split}
   \label{recurrentsystem}
 \end{equation}
-This expression can be illustrated by a directed acyclic computational graph.
-See figure~\ref{dag}\\
+This expression can be illustrated by a directed acyclic computational graph, as
+shown in Figure~\ref{dag}\\
 \input{sections/scientific/fr2/DAG.tex}
 
 Now we consider the recurrent system accepting an external signal $\bm{x}_{t}$,
@@ -43,7 +43,7 @@ denote the state,
 \begin{equation}
   \bm{h}_{t} = f(\bm{h}_{t-1},\bm{x}_{t};\theta)
 \end{equation}
-represented in figure~\ref{unfoldrnnaccepting}.\\
+represented in Figure~\ref{unfoldrnnaccepting}.\\
 \input{sections/scientific/fr2/unfoldrnnaccepting.tex}
 
 %math
@@ -53,17 +53,17 @@ some important designs of RNNs:\\
 
 \begin{itemize}
   \item RNNs which take a single input and produce an output at every time step
-    $t$. This is called a one to many RNN.\\
+    $t$. This is called a one-to-many RNN.\\
   \item RNNs which read an entire data sequence and produce a data sequence.
-    This is called a many to many RNN.\\
+    This is called a many-to-many RNN.\\
   \item RNNs which are connected recurrently between hidden units, read an
     entire data sequence $S$ and produce only one single output. This is called
-    a many to one RNN.\\
+    a many-to-one RNN.\\
 \end{itemize}
 
 \input{sections/scientific/fr2/noutputrnn.tex}
 
-We pick the RNN represented in figure~\ref{noutputrnn} to develop forward
+We pick the RNN represented in Figure~\ref{noutputrnn} to develop forward
 propagation equations. This RNN takes in a data sequence $S$ and outputs for
 every time step $t$ an output. In this figure, we didn't include an
 activation function for the hidden units $h$. However, for the equations, we
@@ -87,7 +87,8 @@ long-term dependencies is that gradients, propagated through a very deep RNN,
 can vanish or explode. Gradients can vanish when the gradients are converging to
 $0$ and therefore the weights won't be updated while learning. Exploding
 gradients happen if the gradients are too large and the loss function will never
-reach the optimized minimum. There is a solution to this problem. We will
-introduce Long Short-term Memory (LSTM) and Gated Recurrent Unit (GRU) RNNs
-which are an RNN architecture dealing with this
-challenge.\cite{doi:10.1162/neco.1997.9.8.1735}~\\
+reach the optimized minimum. As a solution to the challenges of RNNs, effective
+sequence models used in practice are called gated RNNs. These include the long
+short-term memory (LSTM) and the gated recurrent unit (GRU) based RNNs. Gated
+RNNs are based on the idea of creating paths through time that have gradients
+that neither vanish nor explode.\cite{doi:10.1162/neco.1997.9.8.1735}~\\

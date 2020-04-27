@@ -4,11 +4,12 @@
 
 % -Explanation of the English dataset
 
-For this experiment, we use an audio dataset of English spoken
-words\cite{DBLP:journals/corr/abs-1804-03209}. From this dataset we choose the
-words $w \in \{'zero', 'one', 'two', \dots , 'eight', 'nine'\}$. This dataset
-contains many persons pronouncing these different words.  Every file is roughly
-$1s$ long and is sampled at $16kHz$.\\
+For the pilot study, we use an audio dataset of English spoken
+words\cite{DBLP:journals/corr/abs-1804-03209}. It contains 105829 utterances of
+35 words. This dataset contains 2618  persons pronouncing these different words.
+Every utterance is roughly $1s$ long, sampled at $16kHz$ and saved as a WAVE
+format file. From this dataset we choose the words $w \in \{'zero', 'one',
+'two', \dots , 'eight', 'nine'\}$.\\
 
 We use the Python library \textit{librosa}~\cite{librosa} to extract the MFCCs from the
 dataset. Instead of processing the whole dataset, the following steps are
@@ -39,7 +40,7 @@ with:
 \begin{lstlisting}
 mfccs = librosa.feature.mfcc(y=y, sr=sr)
 \end{lstlisting}
-This function \textit{.mfcc()} returns an \textit{np.ndarray} with the dimension:
+The function \textit{.mfcc()} returns an \textit{np.ndarray} with the dimension:
 \begin{equation*}
   shape=(n\_mfcc,t) 
 \end{equation*}
@@ -47,11 +48,11 @@ with $n\_mfcc$ being the number of MFCCs and $t$ the number of frames.
 \item The last step is to flatten this matrix to a vector which can be stored in a
   data frame for later training.
 \begin{lstlisting}
-row = mfcc.T.flatten() 
+row = mfccs.T.flatten() 
 \end{lstlisting}
-The matrix $mfcc$ is transposed and flattened. This concatenates the columns
+The matrix $mfccs$ is transposed and flattened. This concatenates the columns
 together forming a vector.
 \end{enumerate}~\\
-Theses steps are then applied to the entire dataset. Each computed vector is
+These steps are then applied to the entire dataset. Each computed vector is
 appended to the data frame which is going to be stored as a $.csv$ file. The
-entire code snippet is in the Appendix in Figure~\ref{mfccsnip}.
+entire code snippet is given in the Appendix in Figure~\ref{mfccsnip}.
